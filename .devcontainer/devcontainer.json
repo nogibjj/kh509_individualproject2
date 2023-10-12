@@ -1,42 +1,49 @@
 {
-	"name": "Rust Development",
-
-	// Use the official Rust image from Docker Hub
-	"image": "rust",
-	"extensions": ["ms-vscode.rust"],
-
-	// Run additional commands after the container is created
-	"postCreateCommand": "rustup update && rustup component add rustfmt clippy && cargo build",
-
-	// Add environment variables if needed
-	"remoteEnv": {
-		"RUST_BACKTRACE": "1"
+	"name": "Rust",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// Use the VARIANT arg to pick a Debian OS version: buster, bullseye
+			// Use bullseye when on local on arm64/Apple Silicon.
+			"VARIANT": "buster"
+		}
 	},
-
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
-	},
-
-	// Install additional tools and dependencies
 	"runArgs": [
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
-		"seccomp=unconfined",
-		"--privileged",
-		"--init"
+		"seccomp=unconfined"
 	],
 
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"GitHub.vscode-pull-request-github",
-		"ms-azuretools.vscode-docker"
-	],
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"lldb.executable": "/usr/bin/lldb",
+				// VS Code don't watch files under ./target
+				"files.watcherExclude": {
+					"**/target/**": true
+				},
+				"rust-analyzer.checkOnSave.command": "clippy"
+			},
+			
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"rust-lang.rust-analyzer",
+				"GitHub.copilot-nightly",
+				"GitHub.copilot-labs",
+				"GitHub.copilot-chat"
+			]
+		}
+	},
 
-	// Add mount points if needed
-	"mounts": [
-		"source=your-source-code-folder,target=/workspace,type=bind,consistency=cached"
-	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
 
-	// Forward Ports if needed
-	"forwardPorts": [3000, 8080]
+	// Use 'postCreateCommand' to run commands after the container is created.
+	 "postCreateCommand": "./setup.sh",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
 }
