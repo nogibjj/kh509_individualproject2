@@ -1,59 +1,44 @@
-
-/*
-This is a library that randomly returns fruits native to Portugual.
-The style of the code is that we use a constant array of strings to store the fruits.
-We then use this const in a function that later get called in the main.rs file as a CLI.
-
-The CLI should support the following:
-
-//the quantity of fruits to return
---count 5
-*/
-
 use rand::Rng;
+use std::sync::RwLock;
 
-// a vector of immutable strings that represent fruits native to Portugal and the Azores
-const FRUITS: [&str; 10] = [
-    "banana",
-    "apple",
-    "orange",
-    "pear",
-    "pineapple",
-    "grape",
-    "strawberry",
-    "raspberry",
-    "blueberry",
-    "blackberry",
-];
-
-/*
-return a random fruit from the FRUITS vector
-Accepts a count of fruits to return
-*/
+lazy_static::lazy_static! {
+    static ref FRUITS: RwLock<Vec<&'static str>> = {
+        let fruits: Vec<&'static str> = vec![
+            "banana",
+            "apple",
+            "orange",
+            "pear",
+            "pineapple",
+            "grape",
+            "strawberry",
+            "raspberry",
+            "blueberry",
+            "blackberry",
+        ];
+        RwLock::new(fruits)
+    };
+}
 
 pub fn get_fruits(count: u32) -> Vec<String> {
-    let mut fruits = Vec::new();
+    let fruits = FRUITS.read().unwrap();
+    let mut result = Vec::new();
+    let mut rng = rand::thread_rng();
     for _ in 0..count {
-        let fruit = rand::thread_rng().gen_range(0..FRUITS.len());
-        fruits.push(FRUITS[fruit].to_string());
+        let fruit_idx = rng.gen_range(0..fruits.len());
+        result.push(fruits[fruit_idx].to_string());
     }
-    fruits
-}
-pub fn add_fruit(fruit: &str) {
-    unsafe {
-        FRUITS.write().push(fruit);
-    }
+    result
 }
 
-pub fn remove_fruit(fruit: &str) {
-    unsafe {
-        FRUITS.write().retain(|&x| x != fruit);
-    }
+pub fn add_fruit(fruit: &'static str) {
+    let mut fruits = FRUITS.write().unwrap();
+    fruits.push(fruit);
 }
-/*Test 
 
-A test that checks if the get_fruits function returns the correct number of fruits
-*/
+pub fn remove_fruit(fruit: &'static str) {
+    let mut fruits = FRUITS.write().unwrap();
+    fruits.retain(|&x| x != fruit);
+}
 
 #[cfg(test)]
 mod tests {
