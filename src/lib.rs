@@ -39,7 +39,17 @@ pub fn get_fruits(count: u32) -> Vec<String> {
     }
     fruits
 }
+pub fn add_fruit(fruit: &str) {
+    unsafe {
+        FRUITS.write().push(fruit);
+    }
+}
 
+pub fn remove_fruit(fruit: &str) {
+    unsafe {
+        FRUITS.write().retain(|&x| x != fruit);
+    }
+}
 /*Test 
 
 A test that checks if the get_fruits function returns the correct number of fruits
