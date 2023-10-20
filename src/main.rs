@@ -27,11 +27,16 @@ fn main() {
     if let Some(fruit) = args.add {
         add_fruit(&fruit);
         println!("Added fruit: {}", fruit);
+        let fruits = get_fruits();
+        println!("Fruits after adding: {:?}", fruits);
     } else if let Some(fruit) = args.remove {
         remove_fruit(&fruit);
         println!("Removed fruit: {}", fruit);
+        let fruits = get_fruits();
+        println!("Fruits after removal: {:?}", fruits);
     } else {
-        let fruits = get_fruits(args.count);
+        let fruits = get_fruits();
+
         if fruits.is_empty() {
             println!("No fruits available.");
         } else {
