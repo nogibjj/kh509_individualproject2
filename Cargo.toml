@@ -9,6 +9,7 @@ edition = "2021"
 rand = "0.8.5"
 clap = { version = "4.4", features = ["derive"] }
 lazy_static = "1.4.0"
+structopt = "0.3.25"
 [lib]
 name = "fruits"
 path = "src/lib.rs"
