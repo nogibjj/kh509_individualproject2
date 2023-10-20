@@ -6,14 +6,7 @@ lazy_static::lazy_static! {
         let fruits: Vec<String> = vec![
             "banana".to_string(),
             "apple".to_string(),
-            "orange".to_string(),
-            "pear".to_string(),
-            "pineapple".to_string(),
-            "grape".to_string(),
-            "strawberry".to_string(),
-            "raspberry".to_string(),
-            "blueberry".to_string(),
-            "blackberry".to_string(),
+
         ];
         RwLock::new(fruits)
     };

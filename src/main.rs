@@ -32,6 +32,10 @@ fn main() {
         println!("Removed fruit: {}", fruit);
     } else {
         let fruits = get_fruits(args.count);
-        println!("fruits: {:?}", fruits);
+        if fruits.is_empty() {
+            println!("No fruits available.");
+        } else {
+            println!("Fruits: {:?}", fruits);
+        }
     }
 }
