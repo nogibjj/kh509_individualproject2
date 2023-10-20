@@ -2,18 +2,18 @@ use rand::Rng;
 use std::sync::RwLock;
 
 lazy_static::lazy_static! {
-    static ref FRUITS: RwLock<Vec<&'static str>> = {
-        let fruits: Vec<&'static str> = vec![
-            "banana",
-            "apple",
-            "orange",
-            "pear",
-            "pineapple",
-            "grape",
-            "strawberry",
-            "raspberry",
-            "blueberry",
-            "blackberry",
+    static ref FRUITS: RwLock<Vec<String>> = {
+        let fruits: Vec<String> = vec![
+            "banana".to_string(),
+            "apple".to_string(),
+            "orange".to_string(),
+            "pear".to_string(),
+            "pineapple".to_string(),
+            "grape".to_string(),
+            "strawberry".to_string(),
+            "raspberry".to_string(),
+            "blueberry".to_string(),
+            "blackberry".to_string(),
         ];
         RwLock::new(fruits)
     };
@@ -30,14 +30,14 @@ pub fn get_fruits(count: u32) -> Vec<String> {
     result
 }
 
-pub fn add_fruit(fruit: &'static str) {
+pub fn add_fruit(fruit: &str) {
     let mut fruits = FRUITS.write().unwrap();
-    fruits.push(fruit);
+    fruits.push(fruit.to_string());
 }
 
-pub fn remove_fruit(fruit: &'static str) {
+pub fn remove_fruit(fruit: &str) {
     let mut fruits = FRUITS.write().unwrap();
-    fruits.retain(|&x| x != fruit);
+    fruits.retain(|x| x != fruit);
 }
 
 #[cfg(test)]
