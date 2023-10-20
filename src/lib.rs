@@ -39,19 +39,7 @@ pub fn get_fruits(count: u32) -> Vec<String> {
     }
     fruits
 }
-/*
-Add a new fruit to the FRUITS vector
-*/
-pub fn add_fruit(fruit: &str) {
-    FRUITS.push(fruit);
-}
 
-/*
-Remove a fruit from the FRUITS vector by its name
-*/
-pub fn remove_fruit(fruit: &str) {
-    FRUITS.retain(|&x| x != fruit);
-}
 /*Test 
 
 A test that checks if the get_fruits function returns the correct number of fruits
