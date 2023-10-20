@@ -10,5 +10,5 @@ rand = "0.8.5"
 clap = { version = "4.4", features = ["derive"] }
 
 [lib]
-name = "make_card"
+name = "fruits"
 path = "src/lib.rs"

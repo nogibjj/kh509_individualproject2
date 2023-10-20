@@ -1,4 +1,4 @@
-use calc_cli_with_tests::get_fruits;
+use fruits::get_fruits;
 use clap::Parser;
 
 /// CLI tool to return random fruits
@@ -15,4 +15,4 @@ fn main() {
     let fruits = get_fruits(args.count);
     println!("fruits: {:?}", fruits);
 }
-}
+
