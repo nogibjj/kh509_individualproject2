@@ -1,4 +1,6 @@
 use fruits::get_fruits;
+use fruits::add_fruit;
+use fruits::remove_fruit;
 use clap::Parser;
 
 /// CLI tool to return random fruits
