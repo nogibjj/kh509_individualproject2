@@ -1,6 +1,6 @@
 # Mini Project 7 : Package a Rust Script into a Command-Line Tool
 Katelyn Hucker (kh509)
-This is my mini project which is an introduction to coding in Rust. My project is a command line tool (CLT), which adds and removes fruits to a fruit list, which is already created.
+This is my mini project which is an introduction to coding in Rust. My project is a command line tool, which adds and removes fruits to a fruit list, which is already created. The original project can be found on [click here](https://github.com/nogibjj/rust-data-engineering/blob/main/calc-cli-with-tests/src/lib.rs) Instead of randomly getting fruits, my project lets users interact by adding and removing so it is now has more functionality.
 
 ### Contents:
 ```
