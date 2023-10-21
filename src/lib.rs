@@ -1,4 +1,4 @@
-use std::sync::{RwLock};
+use std::sync::RwLock;
 
 lazy_static::lazy_static! {
     static ref FRUITS: RwLock<Vec<String>> = {
@@ -8,11 +8,6 @@ lazy_static::lazy_static! {
         ];
         RwLock::new(fruits)
     };
-}
-
-pub fn get_fruits() -> Vec<String> {
-    let fruits = FRUITS.read().unwrap();
-    fruits.clone()
 }
 
 pub fn add_fruit(fruit: &str) {
@@ -25,4 +20,7 @@ pub fn remove_fruit(fruit: &str) {
     fruits.retain(|x| x != fruit);
 }
 
-
+pub fn get_fruits() -> Vec<String> {
+    let fruits = FRUITS.read().unwrap();
+    fruits.clone()
+}

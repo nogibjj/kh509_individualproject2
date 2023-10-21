@@ -1,8 +1,8 @@
 /*A cli that generates random fruits */
-use fruit::get_fruits;
-use fruit::add_fruit;
-use fruit::remove_fruit;
 use clap::Parser;
+use fruit::add_fruit;
+use fruit::get_fruits;
+use fruit::remove_fruit;
 
 /// CLI tool to return random fruits
 #[derive(Parser, Debug)]
