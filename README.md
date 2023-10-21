@@ -1,5 +1,5 @@
 # Mini Project 7 : Package a Rust Script into a Command-Line Tool
-## Katelyn Hucker (kh509)
+## Katelyn Hucker (kh509) [![Clippy](https://github.com/nogibjj/kh509_miniproject7/actions/workflows/clippy.yml/badge.svg)]
 This is my mini project which is an introduction to coding in Rust. My project is a command line tool, which adds and removes fruits to a fruit list, which is already created. The original project can be found on [here](https://github.com/nogibjj/rust-data-engineering/blob/main/calc-cli-with-tests/src/lib.rs). Instead of randomly getting fruits, my project lets users interact by adding and removing so it is now has more functionality.
 
 ### Contents:
@@ -18,7 +18,7 @@ kh509_miniproject7/
 └── README.md
 ```
 
-### 1. actions.yml
+### 1. [actions.yml](https://github.com/nogibjj/kh509_miniproject7/.github/workflows/clippy.yml)
 This is a GitHub Actions workflow file named `Clippy`:
 - **Name**: Clippy
 - **Triggers**: It is triggered on both push events to the `main` branch and pull requests.
@@ -35,7 +35,7 @@ This workflow automates the process of formatting, linting, and testing a Rust p
 As seen in the badge above, the project is passing the entire CI/CD build without any errors. Below is also a screenshot of the project passing the test function written in `lib.rs`.
 
 
-### 2. src Folder:
+### 2. [src folder](https://github.com/nogibjj/kh509_miniproject7/src)
 
 Here is my lib.rs and main.rs functionality in use:
 
@@ -52,10 +52,10 @@ Here is my lib.rs and main.rs functionality in use:
 ![image](https://github.com/nogibjj/kh509_miniproject7/assets/143521756/86aa312c-3022-4c78-9061-4497b0d417eb)
 
 
-### 3. [Cargo.toml](https://github.com/nogibjj/aad64_command_line/Cargo.toml)
+### 3. [Cargo.toml](https://github.com/nogibjj/kh509_miniproject7/Cargo.toml)
 This file is the `Cargo.toml` manifest for a Rust project named `calc-cli-with-tests` with dependencies on `clap`, `lazy_static`, `structopt` and `rand` libraries. It specifies the project version, edition, and library configuration.
 
-### 4. [Makefile](https://github.com/nogibjj/aad64_command_line/Makefile)
+### 4. [Makefile](https://github.com/nogibjj/kh509_miniproject7/Makefile)
 This is a `Makefile` used for automating various tasks in a Rust project:
 - `format`: Invokes `cargo fmt` to automatically format the code according to Rust style guidelines.
 - `lint`: Executes `cargo clippy` to perform linting and static analysis to catch potential issues or non-idiomatic code.
