@@ -1,6 +1,6 @@
 # Mini Project 7 : Package a Rust Script into a Command-Line Tool
-Katelyn Hucker (kh509)
-This is my mini project which is an introduction to coding in Rust. My project is a command line tool, which adds and removes fruits to a fruit list, which is already created. The original project can be found on [click here](https://github.com/nogibjj/rust-data-engineering/blob/main/calc-cli-with-tests/src/lib.rs) Instead of randomly getting fruits, my project lets users interact by adding and removing so it is now has more functionality.
+## Katelyn Hucker (kh509)
+This is my mini project which is an introduction to coding in Rust. My project is a command line tool, which adds and removes fruits to a fruit list, which is already created. The original project can be found on [here](https://github.com/nogibjj/rust-data-engineering/blob/main/calc-cli-with-tests/src/lib.rs). Instead of randomly getting fruits, my project lets users interact by adding and removing so it is now has more functionality.
 
 ### Contents:
 ```
@@ -37,10 +37,23 @@ As seen in the badge above, the project is passing the entire CI/CD build withou
 
 ### 2. src Folder:
 
+Here is my lib.rs and main.rs functionality in use:
+
+##### Step 1: Let's see what is currently in our fruits list. 
+
+![image](https://github.com/nogibjj/kh509_miniproject7/assets/143521756/9adad8c9-d8dd-48fb-b6b8-be4259a814f7)
+
+
+##### Step 2: Let's add a fruit to the list. 
+![image](https://github.com/nogibjj/kh509_miniproject7/assets/143521756/79f603d3-c131-4b58-8ee2-f14281c68cbb)
+
+##### Step 3: Let's remove a fruit from the list. 
+
+![image](https://github.com/nogibjj/kh509_miniproject7/assets/143521756/86aa312c-3022-4c78-9061-4497b0d417eb)
 
 
 ### 3. [Cargo.toml](https://github.com/nogibjj/aad64_command_line/Cargo.toml)
-This file is the `Cargo.toml` manifest for a Rust project named `cli-customize-cards` with dependencies on `clap`, `csv`, and `rand` libraries. It specifies the project version, edition, and library configuration.
+This file is the `Cargo.toml` manifest for a Rust project named `calc-cli-with-tests` with dependencies on `clap`, `lazy_static`, `structopt` and `rand` libraries. It specifies the project version, edition, and library configuration.
 
 ### 4. [Makefile](https://github.com/nogibjj/aad64_command_line/Makefile)
 This is a `Makefile` used for automating various tasks in a Rust project:
@@ -49,3 +62,6 @@ This is a `Makefile` used for automating various tasks in a Rust project:
 - `test`: Runs the project's test suite using `cargo test`.
 - `run`: Launches the project with `cargo run`.
 - `all`: Combines the tasks `format`, `lint`, `test`, and `run` to perform all common project tasks in sequence.
+
+### Further Work:
+As this was an introduction project, I am still beginning to understand Rust's syntax. I would have wanted to allow the fruits list to keep its additions and removals so one can forever,add, and remove and then save the list. This would be a great tool for someone to hold their grocery list somewhere. 
