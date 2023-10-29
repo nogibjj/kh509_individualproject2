@@ -1,3 +1,5 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/rust
 {
 	"name": "Rust",
 	"build": {
@@ -32,8 +34,7 @@
 			"extensions": [
 				"rust-lang.rust-analyzer",
 				"GitHub.copilot-nightly",
-				"GitHub.copilot-labs",
-				"GitHub.copilot-chat"
+				"GitHub.copilot-labs"
 			]
 		}
 	},

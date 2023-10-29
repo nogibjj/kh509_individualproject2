@@ -1,5 +1,5 @@
-use clap::Parser;
 use sql_runner::{create_db, fill_data, use_query};
+use clap::Parser;
 use std::time::Instant;
 
 #[derive(Parser)]
