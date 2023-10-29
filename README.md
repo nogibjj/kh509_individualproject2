@@ -4,7 +4,7 @@ This is my mini project which is an introduction to coding in Rust. My project i
 
 ### Contents:
 ```
-kh509_miniproject7/
+kh509_individualproject2/
 ├── .github/
 │   └── workflows/actions.yml
 ├── .gitignore
@@ -18,50 +18,34 @@ kh509_miniproject7/
 └── README.md
 ```
 
-### 1. [actions.yml](https://github.com/nogibjj/kh509_miniproject7/.github/workflows/clippy.yml)
-This is a GitHub Actions workflow file named `Clippy`:
-- **Name**: Clippy
-- **Triggers**: It is triggered on both push events to the `main` branch and pull requests.
-- **Jobs**:
-  - **build**:
-    - **Environment**: It runs on an Ubuntu environment.
-    - **Steps**:
-      - `actions/checkout@v1`: Checks out the repository.
-      - `actions-rs/toolchain@v1`: Sets up the Rust toolchain with Clippy and Rustfmt.
-      - **Format**: Executes the `make format` command.
-      - **Lint**: Executes the `make lint` command.
-      - **Test**: Executes the `make test` command.
-This workflow automates the process of formatting, linting, and testing a Rust project using GitHub Actions whenever there is a push to the `main` branch or a pull request is opened.
-As seen in the badge above, the project is passing the entire CI/CD build without any errors. Below is also a screenshot of the project passing the test function written in `lib.rs`.
+### Rust Source Code 
 
 
-### 2. [src folder](https://github.com/nogibjj/kh509_miniproject7/src)
-
-Here is my lib.rs and main.rs functionality in use:
-
-##### Step 1: Let's see what is currently in our fruits list. 
-
-![image](https://github.com/nogibjj/kh509_miniproject7/assets/143521756/9adad8c9-d8dd-48fb-b6b8-be4259a814f7)
+### SQLite Database: CRUD Operations
+  ##### CREATE 
+  ##### READ 
+  ##### UPDATE
+  ##### DELETE
 
 
-##### Step 2: Let's add a fruit to the list. 
-![image](https://github.com/nogibjj/kh509_miniproject7/assets/143521756/79f603d3-c131-4b58-8ee2-f14281c68cbb)
-
-##### Step 3: Let's remove a fruit from the list. 
-
-![image](https://github.com/nogibjj/kh509_miniproject7/assets/143521756/86aa312c-3022-4c78-9061-4497b0d417eb)
+Use of GitHub Copilot (10 points):
 
 
-### 3. [Cargo.toml](https://github.com/nogibjj/kh509_miniproject7/Cargo.toml)
-This file is the `Cargo.toml` manifest for a Rust project named `calc-cli-with-tests` with dependencies on `clap`, `lazy_static`, `structopt` and `rand` libraries. It specifies the project version, edition, and library configuration.
 
-### 4. [Makefile](https://github.com/nogibjj/kh509_miniproject7/Makefile)
-This is a `Makefile` used for automating various tasks in a Rust project:
-- `format`: Invokes `cargo fmt` to automatically format the code according to Rust style guidelines.
-- `lint`: Executes `cargo clippy` to perform linting and static analysis to catch potential issues or non-idiomatic code.
-- `test`: Runs the project's test suite using `cargo test`.
-- `run`: Launches the project with `cargo run`.
-- `all`: Combines the tasks `format`, `lint`, `test`, and `run` to perform all common project tasks in sequence.
+Optimized Rust Binary (10 points): Process included that generates an optimized Rust binary as a GitHub Actions artifact that can be downloaded.
 
-### Further Work:
-As this was an introduction project, I am still beginning to understand Rust's syntax. I would have wanted to allow the fruits list to keep its additions and removals so one can forever,add, and remove and then save the list. This would be a great tool for someone to hold their grocery list somewhere. 
+
+README.md (10 points): The README.md file is clear and concise and guides the user on how to run the program.
+	•	Explanation of the project: 3 points
+	•	How to run the program: 3 points
+	•	Dependencies and how to install them: 4 points
+
+GitHub Actions (10 points): Your GitHub Actions file should test, build, and lint your Rust code correctly.
+	•	Correct testing of Rust code: 3 points
+	•	Correct building of Rust code: 3 points
+	•	Correct linting of Rust code: 4 points
+
+Demo Video (10 points): A 2-5 minute video explaining the project and demonstrating its functionality is included. The video should be high-quality (both audio and visual), not exceed the given time limit, and be linked in the README via a private or public YouTube link.
+	•	Clarity of explanation: 3 points
+	•	Quality demonstration of the project: 3 points
+	•	Quality of video and audio: 4 points
