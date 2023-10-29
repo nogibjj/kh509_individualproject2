@@ -55,13 +55,6 @@ pub fn use_query(statement: String) -> Result<()>{
 
     let mut stmt = conn.prepare(&statement.to_string())?;
 
-    /*let _rows = stmt.query_map([], |row|{
-        let variety: String = row.get(0)?;
-        let petal_length: u32 = row.get(1)?;
-        println!("Variety: {}, Petal_Length: {}", variety, petal_length);
-        Ok(())
-    })?;*/
-
     let mut rows = stmt.query([]).unwrap();
 
     while let Some(row) = rows.next()? {
