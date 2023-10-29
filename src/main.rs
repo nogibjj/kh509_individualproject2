@@ -1,46 +1,31 @@
-/*A cli that generates random fruits */
+use sql_runner::{create_db, fill_data, use_query};
 use clap::Parser;
-use fruit::add_fruit;
-use fruit::get_fruits;
-use fruit::remove_fruit;
+use std::time::Instant;
 
-/// CLI tool to return random fruits
-#[derive(Parser, Debug)]
-#[command(author, version, about, long_about = None)]
-struct Args {
-    /// The quantity of fruits to return
-    #[clap(short, long, default_value = "1")]
-    count: u32,
+#[derive(Parser)]
+#[clap(
+    version = "1.0",
+    author = "Your Name <your.email@example.com>",
+    about = "Query to Execute"
+)]
 
-    /// The fruit to add
-    #[clap(short, long)]
-    add: Option<String>,
-
-    /// The fruit to remove
-    #[clap(short, long)]
-    remove: Option<String>,
+struct Opts {
+    #[clap(long)]
+    query: String,
 }
 
 fn main() {
-    let args = Args::parse();
+    let opts: Opts = Opts::parse();
 
-    if let Some(fruit) = args.add {
-        add_fruit(&fruit);
-        println!("Added fruit: {}", fruit);
-        let fruits = get_fruits();
-        println!("Fruits after adding: {:?}", fruits);
-    } else if let Some(fruit) = args.remove {
-        remove_fruit(&fruit);
-        println!("Removed fruit: {}", fruit);
-        let fruits = get_fruits();
-        println!("Fruits after removal: {:?}", fruits);
-    } else {
-        let fruits = get_fruits();
+    let query = opts.query;
 
-        if fruits.is_empty() {
-            println!("No fruits available.");
-        } else {
-            println!("Fruits: {:?}", fruits);
-        }
+    let now = Instant::now();
+    {
+        let _ = create_db();
+        let _ = fill_data();
+        let _ = use_query(query);
     }
+
+    let elapsed = now.elapsed();
+    println!("Time took: {:.2?}", elapsed);
 }
