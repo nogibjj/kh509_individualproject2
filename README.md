@@ -34,6 +34,8 @@ My rust source code is in the src folder. It contains two files: lib.rs and main
   If the database is not already created we create it in the lib.rs create_db function. We called this database 'flower.'
   ##### READ 
   We can access or read the database by performing the command: "cargo run -- --query 'SELECT * FROM iris_info'"
+
+ 
   ##### UPDATE
   ##### DELETE
 
@@ -42,11 +44,8 @@ Use of GitHub Copilot (10 points):
 
 
 
-Optimized Rust Binary (10 points): Process included that generates an optimized Rust binary as a GitHub Actions artifact that can be downloaded.
+Optimized Rust Binary: 
 
 
 
-Demo Video (10 points): A 2-5 minute video explaining the project and demonstrating its functionality is included. The video should be high-quality (both audio and visual), not exceed the given time limit, and be linked in the README via a private or public YouTube link.
-	•	Clarity of explanation: 3 points
-	•	Quality demonstration of the project: 3 points
-	•	Quality of video and audio: 4 points
+Demo Video:
