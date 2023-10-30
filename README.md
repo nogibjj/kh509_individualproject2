@@ -42,15 +42,15 @@ My rust source code is in the src folder. It contains two files: lib.rs and main
   Here we deleted species which are virginica
   ![image](https://github.com/nogibjj/kh509_individualproject2/assets/143521756/ce259f74-6765-4b80-a780-420ed8073926)
   
-Use of GitHub Copilot:
+### Use of GitHub Copilot:
 
 Github Copilot was used to help autocomplete what dependencies were needed. It was also helpful for converting from python to rust as I am not fluent in coding in rust. I was able to write in python or describe the functioanlity as it would be in python the copilot would conver it to rust. 
 
-Optimized Rust Binary: 
+### Optimized Rust Binary: 
 
 We created a release exectuable called sql runner. This distrubted all the functionality we see in the program in one file for anyone to use. We created this by running 'make release' which includes all the required dependencins and builds the rust project. 
 
 ![image](https://github.com/nogibjj/kh509_individualproject2/assets/143521756/c74b116e-64bd-4469-83bc-9db65307850b)
 
 
-Demo Video:
+### Demo Video:
