@@ -28,15 +28,13 @@ The github workflows completes all formatting linting, and testing requirements.
 - Rust programming environment: Make sure you have Rust installed on your system.
 
 **Dependencies**
-rusqlite: For SQLite database interaction.
-csv: To work with CSV files.
-clap: for function operations. 
+- rusqlite: For SQLite database interaction.
+- csv: To work with CSV files.
+- clap: for function operations. 
 
 To install the Rust dependencies, add them to your Cargo.toml file and run cargo build.
 
 **Building the Binary** 
-To build the Rust binary, use the following command:
-
 bash cargo build --release or make release
 
 ### Rust Source Code 
