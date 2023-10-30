@@ -1,5 +1,5 @@
 # Individual Project #2: Rust CLI Binary with SQLite
-## Katelyn Hucker (kh509) [![Clippy](https://github.com/nogibjj/kh509_miniproject7/actions/workflows/clippy.yml/badge.svg)]
+## Katelyn Hucker (kh509) 
 
 This is my individual project 2. In this project we combine the last few miniprojects into 1 project. Using Rust we create a command line tool which performs CRUD operations on a SQL Database. This creates a downloadable Rust binary file in Github Actions so that we can easily distrubte this rust code system. As always, I used Github Copilot and also performed code linting, formatting, and testing. 
 

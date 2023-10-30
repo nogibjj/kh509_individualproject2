@@ -1,8 +1,6 @@
-use rusqlite::{Connection, Result};
 use csv::ReaderBuilder;
+use rusqlite::{Connection, Result};
 use std::error::Error;
-
-
 
 pub fn create_db() -> Result<()> {
     let conn = Connection::open("flower.db")?;
@@ -28,7 +26,6 @@ pub fn fill_data() -> Result<(), Box<dyn Error>> {
         .has_headers(true)
         .from_path("../iris.csv")?;
 
-
     while let Some(result) = reader.records().next() {
         let record = result?;
 
@@ -44,13 +41,12 @@ pub fn fill_data() -> Result<(), Box<dyn Error>> {
         ) {
             eprintln!("Error inserting row: {}", err);
         }
-
     }
 
     Ok(())
 }
 
-pub fn use_query(statement: String) -> Result<()>{
+pub fn use_query(statement: String) -> Result<()> {
     let conn = Connection::open("flower.db")?;
 
     let mut stmt = conn.prepare(&statement.to_string())?;
@@ -72,15 +68,15 @@ pub fn use_query(statement: String) -> Result<()>{
 }
 
 #[test]
-fn test_database_exists(){
+fn test_database_exists() {
     use std::path::Path;
-    
+
     let path = Path::new("flower.db");
     assert!(path.exists());
 }
 
 #[test]
-fn test_query_works(){
+fn test_query_works() {
     let query = "SELECT * FROM iris_info WHERE species = 'setosa' AND petal_length > 1.0";
     let _ = use_query(query.to_string());
 }
