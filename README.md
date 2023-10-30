@@ -2,7 +2,7 @@
 ## Katelyn Hucker (kh509) [![Build binary release](https://github.com/nogibjj/kh509_individualproject2/actions/workflows/release.yml/badge.svg)](https://github.com/nogibjj/kh509_individualproject2/actions/workflows/release.yml) [![format, lint, test](https://github.com/nogibjj/kh509_individualproject2/actions/workflows/format,lint,test.yml/badge.svg)](https://github.com/nogibjj/kh509_individualproject2/actions/workflows/format,lint,test.yml)
 
 This is my individual project 2. In this project we combine the last few miniprojects into 1 project. Using Rust we create a command line tool which performs CRUD operations on a SQL Database. This creates a downloadable Rust binary file in Github Actions so that we can easily distrubte this rust code system. As always, I used Github Copilot and also performed code linting, formatting, and testing. 
-
+![Demo Video](https://youtu.be/-FrWzgiYBwk)
 ### Contents & How to run this project:
 ```
 kh509_individualproject2/
@@ -69,3 +69,4 @@ We created a release exectuable called sql runner. This distrubted all the funct
 
 
 ### Demo Video:
+![Demo Video](https://youtu.be/-FrWzgiYBwk)
