@@ -3,7 +3,7 @@
 
 This is my individual project 2. In this project we combine the last few miniprojects into 1 project. Using Rust we create a command line tool which performs CRUD operations on a SQL Database. This creates a downloadable Rust binary file in Github Actions so that we can easily distrubte this rust code system. As always, I used Github Copilot and also performed code linting, formatting, and testing. 
 
-### Contents:
+### Contents & How to run this project:
 ```
 kh509_individualproject2/
 ├── .github/
@@ -22,7 +22,22 @@ kh509_individualproject2/
 ├── requirements.txt
 └── README.md
 ```
-The github workflows completes all formatting linting, and testing requirements:
+The github workflows completes all formatting linting, and testing requirements. 
+
+**Prerequisites**
+- Rust programming environment: Make sure you have Rust installed on your system.
+
+**Dependencies**
+rusqlite: For SQLite database interaction.
+csv: To work with CSV files.
+clap: for function operations. 
+
+To install the Rust dependencies, add them to your Cargo.toml file and run cargo build.
+
+**Building the Binary** 
+To build the Rust binary, use the following command:
+
+bash cargo build --release or make release
 
 ### Rust Source Code 
 
