@@ -22,6 +22,7 @@ kh509_individualproject2/
 ├── requirements.txt
 └── README.md
 ```
+The github workflows completes all formatting linting, and testing requirements:
 
 ### Rust Source Code 
 
